@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ItemController;
 use App\Models\Item;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MenuController;
 
 
 /*
@@ -24,8 +25,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/registration', function () {
-    return view('registration');
+Route::get('/signup', function () {
+    return view('signup');
 });
 
 Route::get('/shop',[ItemController::class, 'index'] );
@@ -39,3 +40,5 @@ Route::get('/history', function () {
     return view('history', [
         'title' => 'My History']);
 });
+
+Route::get('/menu',[MenuController::class, 'index'] );
