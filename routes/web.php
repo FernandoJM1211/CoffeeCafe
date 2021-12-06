@@ -42,3 +42,13 @@ Route::get('/history', function () {
 });
 
 Route::get('/menu',[MenuController::class, 'index'] );
+
+Route::get('/order', function () {
+    return view('order', [
+        'title' => 'Order']);
+});
+
+Route::get('/orderhistory', function () {
+    return view('orderhistory', [
+        'title' => 'Order History']);
+});
