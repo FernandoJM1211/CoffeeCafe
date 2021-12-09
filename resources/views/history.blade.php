@@ -44,27 +44,73 @@
         </div>
     </div>
     </div>
-{{-- <div class="table w-full mt-4">
-    <div class="flex flex-row justify-between">
+
+    {{-- modal --}}
+    <div class="detailmodal hidden bg-black bg-opacity-50 absolute inset-0 items-center justify-center">
+        <div class="w-3/4 md:w-2/5 p-4 bg-white rounded-lg shadow-lg">
         <div class="flex flex-col">
-            <div class="text-lg font-medium mb-2">id</div>
-            <p>11</p>
+            <div class="flex justify-between text-lg my-2">
+                <div class="flex">
+                    <p class="font-medium">Id :</p>
+                    <p class="ml-3">00001</p>
+                </div>
+                <button class="exitdetail">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex justify-between my-2">
+                <div class="flex flex-col">
+                    <p class="font-medium">Time Order :</p>
+                    <p>12-12-21, 13.00</p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="font-medium">Time Delivery :</p>
+                    <p>12-12-21, 13.15</p>
+                </div>
+            </div>
+            <p class="text-lg my-2 font-medium">Orders :</p>
+                <div class="flex flex-col w-full my-2">
+                    <div class="flex justify-between">
+                        <div class="w-1/6">Espresso</div>
+                        <div class="w-1/6">3x</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>7.000</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>21.000</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="w-1/6">Cappucino</div>
+                        <div class="w-1/6">2x</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>8.000</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>16.000</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="w-1/6">Arabica</div>
+                        <div class="w-1/6">2x</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>7.000</div>
+                        <div class="w-1/6"><span class="mr-1 hidden md:inline">Rp.</span>14.000</div>
+                    </div>
         </div>
-        <div class="flex w-1/6 flex-col">
-        <div class="text-lg font-medium mb-2">Items</div>
-        <div class="flex justify-between">
-            <p>Espresso</p>
-            <p>x3</p>
+        <div class="flex justify-between text-xl border-t-2">
+            <p>Total :</p>
+            <p>Rp. 51.000</p>
         </div>
-        </div>
-        <div class="flex flex-col">
-            <div class="text-lg font-medium mb-2">Total</div>
-            <p>Rp.12.000,00-</p>
-        </div>
-        <div class="flex flex-col">
-            <div class="text-lg font-medium mb-2">Time Order</div>
-            <p>Sunday, 12-11-20, 13.00</p>
         </div>
     </div>
-</div> --}}
+    </div>
+    <script>
+        const detail = document.querySelector('.detail');
+    const exitdetail = document.querySelector('.exitdetail');
+    const detailmodal = document.querySelector('.detailmodal');
+
+    detail.addEventListener('click', ()=>{
+        detailmodal.classList.remove('hidden');
+        detailmodal.classList.add('flex');
+    })
+
+    exitdetail.addEventListener('click', ()=>{
+        detailmodal.classList.remove('flex');
+        detailmodal.classList.add('hidden');
+    });
+    </script>
 @endsection
