@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoffeeCafe | Home</title>
+    <title>Coffee Cafe | Home</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body style="background-image: url(images/wooden-table-with-cup-coffee.jpg)" class="bg-cover md:bg-center bg-right-bottom h-screen">
     <div class="container w-4/5 mx-auto h-full">
         <!-- navar -->
         <nav class="flex justify-between md:text-xl text-lg h-14 items-center">
-        <div>CoffeeCafe</div>
+        <div>Coffee Cafe</div>
             <!-- desktop nav -->
         
         <div class="hidden md:flex gap-8 text-gray-300">
