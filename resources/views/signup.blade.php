@@ -22,6 +22,8 @@
         <small id="warn1" class="text-white italic hidden">Username must be at least 4 characters</small>
         <label for="email">Email :</label>
         <input type="email" name="email" id="email" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required>
+        <label for="phonenumber">Phone Number :</label>
+        <input type="number" name="phonenumber" id="phonenumber" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required>
         <label for="password">Password :</label>
         <input oninput="check2()" type="password" name="password" id="password" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required pattern="[A-Za-z0-9]+">
         <small id="warn2" class="text-white italic hidden">Password must be at least 4 characters</small>
@@ -71,5 +73,12 @@
         }
     }
 </script>
+<style>
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+margin: 0; 
+}
+</style>
 </body>
 </html>

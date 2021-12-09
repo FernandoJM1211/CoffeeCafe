@@ -41,6 +41,11 @@ Route::get('/history', function () {
         'title' => 'My History']);
 });
 
+Route::get('/userprofile', function () {
+    return view('userprofile', [
+        'title' => 'User Profile']);
+});
+
 Route::get('/menu',[MenuController::class, 'index'] );
 
 Route::get('/order', function () {
