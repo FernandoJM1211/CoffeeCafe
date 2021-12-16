@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Cafe | Login</title>
+    <title>Coffee Cafe | {{ $title }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body style="background-image: url(images/wooden-table-with-cup-coffee.jpg)" class="bg-cover md:bg-center bg-right-bottom h-screen">
@@ -18,7 +18,7 @@
                 <p class="text-xl mb-6 md:-mb-4">Coffee Cafe</h1>
                 <p class="italic text-lg text-center mb-6 md:mb-0">"Make a Great Day <br> with a Great Coffee"</p> 
             <div class="flex justify-between text-sm">
-<a href="registration.html">Don't have an account?</a>
+<a href="/signup">Don't have an account?</a>
 <a href="">Forgot password?</a>
             </div>
         </div>

@@ -15,8 +15,8 @@
             <!-- desktop nav -->
         
         <div class="hidden md:flex gap-8 text-gray-300">
-            <a href="login.html" class="hover:text-white">Login</a>
-            <a href="registration.html" class="hover:text-white">Sign Up</a>
+            <a href="/login" class="hover:text-white">Login</a>
+            <a href="/signup" class="hover:text-white">Sign Up</a>
         </div>
 
         <!-- mobile nav -->
@@ -26,8 +26,8 @@
         </nav>
         <div class="mobile-menu hidden md:hidden mx-auto gap-1">
             <div class="flex flex-col border-t gap-1">
-            <a href="login.php" class="hover:text-white">Login</a>
-            <a href="registration.php" class="hover:text-white">Sign up</a> 
+            <a href="/login" class="hover:text-white">Login</a>
+            <a href="/signup" class="hover:text-white">Sign up</a> 
             </div>
         </div>
         <!-- contain -->

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Cafe | Sign up</title>
+    <title>Coffee Cafe | {{ $title }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body style="background-image: url(images/wooden-table-with-cup-coffee.jpg)" class="bg-cover md:bg-center bg-right-bottom h-screen">
@@ -16,16 +16,23 @@
             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg></a>
     </div>
-    <form action="" method="post" class="flex flex-col gap-2">
+    <form action="/signup" method="post" class="flex flex-col gap-2">
+        @csrf
         <label for="username">Username :</label>
-        <input oninput="check1()" type="text" name="username" id="username" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required minlength="4" pattern="[A-Za-z0-9]+">
+        <input oninput="check1()" type="text" name="username" id="username" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required minlength="4" pattern="[A-Za-z0-9]+" value="{{ old('username') }}">
+        @error('username')
+            <small class="italic">{{ $message }}</small>
+        @enderror
         <small id="warn1" class="text-white italic hidden">Username must be at least 4 characters</small>
         <label for="email">Email :</label>
-        <input type="email" name="email" id="email" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required>
+        <input type="email" name="email" id="email" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required value="{{ old('email') }}">
+        @error('email')
+            <small class="italic">{{ $message }}</small>
+        @enderror
         <label for="phonenumber">Phone Number :</label>
-        <input type="number" name="phonenumber" id="phonenumber" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required>
+        <input type="number" name="phonenumber" id="phonenumber" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required value="{{ old('phonenumber') }}">
         <label for="password">Password :</label>
-        <input oninput="check2()" type="password" name="password" id="password" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required pattern="[A-Za-z0-9]+">
+        <input oninput="check2()" type="password" name="password" id="password" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required minlength="4" pattern="[A-Za-z0-9]+">
         <small id="warn2" class="text-white italic hidden">Password must be at least 4 characters</small>
         <label for="passsword2">Confirm Password :</label>
         <input oninput="check3()" type="password" name="password2" id="password2" class="bg-transparent border rounded-full h-7 text-sm pl-3" autocomplete="off" required pattern="[A-Za-z0-9]+">

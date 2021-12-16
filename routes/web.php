@@ -4,6 +4,8 @@ use App\Models\Item;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 
 
 /*
@@ -19,10 +21,6 @@ use App\Http\Controllers\MenuController;
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('/login', function () {
-    return view('login');
 });
 
 Route::get('/signup', function () {
@@ -57,3 +55,9 @@ Route::get('/orderhistory', function () {
     return view('orderhistory', [
         'title' => 'Order History']);
 });
+
+Route::get('/login',[LoginController::class, 'index'] );
+
+Route::get('/signup',[SignupController::class, 'index'] );
+
+Route::post('/signup',[SignupController::class, 'store'] );
