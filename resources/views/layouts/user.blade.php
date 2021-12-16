@@ -12,8 +12,15 @@
         <div class="side-nav md:flex md:flex-col md:w-56 md:bg-white hidden">
             <a href="" class="text-lg my-3 "><span class="ml-3">Coffee Cafe</span></a>
             <div class="flex flex-col gap-3 border-t">
-            <a href="" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3">Profile</span></a>
-            <a href="logout.php" class="py-1 hover:bg-gray-400"><span class="ml-3">Log out</span></a>
+                @auth
+                <a href="" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3">Profile</span></a>
+                <form class="-mb-0 py-1 hover:bg-gray-400" action="/logout" method="post">
+                    @csrf
+                    <button ><span class="ml-3">Log out</span></button>
+                </form>
+                @else
+                <a href="/login" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3">Login</span></a>
+                @endauth
             </div>
     <div class="flex flex-col gap-3 border-t mt-3">
     <a href="shop" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3 py-1">Shop</span></a>

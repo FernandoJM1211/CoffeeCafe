@@ -56,8 +56,10 @@ Route::get('/orderhistory', function () {
         'title' => 'Order History']);
 });
 
-Route::get('/login',[LoginController::class, 'index'] );
+Route::get('/login',[LoginController::class, 'index'] )->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class, 'authenticate'] );
 
-Route::get('/signup',[SignupController::class, 'index'] );
+Route::post('/logout',[LoginController::class, 'logout'] );
 
+Route::get('/signup',[SignupController::class, 'index'] )->middleware('guest');
 Route::post('/signup',[SignupController::class, 'store'] );
