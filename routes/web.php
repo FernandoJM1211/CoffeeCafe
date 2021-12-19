@@ -45,8 +45,6 @@ Route::get('/userprofile', function () {
         'title' => 'User Profile']);
 });
 
-Route::get('/menu',[MenuController::class, 'index'] );
-
 Route::get('/order', function () {
     return view('order', [
         'title' => 'Order']);
@@ -66,3 +64,4 @@ Route::get('/signup',[SignupController::class, 'index'] )->middleware('guest');
 Route::post('/signup',[SignupController::class, 'store'] );
 
 Route::resource('/profile', ProfileController::class) ->middleware('auth');
+Route::resource('/menu', MenuController::class) ->middleware('auth');
