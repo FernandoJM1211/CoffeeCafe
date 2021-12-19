@@ -13,7 +13,7 @@
             <a href="" class="text-lg my-3 "><span class="ml-3">Coffee Cafe</span></a>
             <div class="flex flex-col gap-3 border-t">
                 @auth
-                <a href="" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3">Profile</span></a>
+                <a href="/profile" class="mt-2 py-1 hover:bg-gray-400"><span class="ml-3">Profile</span></a>
                 <form class="-mb-0 py-1 hover:bg-gray-400" action="/logout" method="post">
                     @csrf
                     <button ><span class="ml-3">Log out</span></button>

@@ -6,6 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -63,3 +64,5 @@ Route::post('/logout',[LoginController::class, 'logout'] );
 
 Route::get('/signup',[SignupController::class, 'index'] )->middleware('guest');
 Route::post('/signup',[SignupController::class, 'store'] );
+
+Route::resource('/profile', ProfileController::class) ->middleware('auth');
