@@ -64,4 +64,5 @@ Route::get('/signup',[SignupController::class, 'index'] )->middleware('guest');
 Route::post('/signup',[SignupController::class, 'store'] );
 
 Route::resource('/profile', ProfileController::class) ->middleware('auth');
+
 Route::resource('/menu', MenuController::class) ->middleware('auth');

@@ -42,9 +42,10 @@ class MenuController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'price' => 'required',
-            'image' => 'required'
+            'image' => 'image|required'
         ]);
 
+        $validatedData['image'] = $request->file('image')->store('post-images');
         $validatedData['id'] = auth()->user()->id;
 
         Item::create($validatedData);
@@ -60,7 +61,11 @@ class MenuController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return view('menu', [
+            'title' => 'Menu',
+            'item' => $item,
+            'items' => Item::all()
+        ]);
     }
 
     /**
@@ -81,9 +86,21 @@ class MenuController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+            'image' => 'required'
+        ]);
+        
+        $validatedData['id'] = auth()->user()->id;
+
+        $item = Item::find($id);
+        $item->update($request->all());
+            // ->update($validatedData);
+
+        return redirect('/menu')->with('success3', 'Menu has been updated!');
     }
 
     /**
@@ -92,8 +109,10 @@ class MenuController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        //
+        $item = Item::find($id)->delete();
+
+        return redirect('/menu')->with('success2', 'Menu has been deleted!');
     }
 }
